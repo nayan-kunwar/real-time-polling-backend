@@ -1,3 +1,4 @@
+import { broadcastPollResults } from "../socket/index.js";
 import prisma from "../utils/prisma.client.js";
 
 export const createPoll = async (req, res) => {
@@ -262,13 +263,10 @@ export const submitVote = async (req, res) => {
       text: opt.text,
       votes: opt.votes.length,
     }));
-    // 🔴 Broadcast live results to all clients in this poll room
-    if (req.io) {
-      req.io.to(`poll_${poll.id}`).emit("pollUpdated", {
-        pollId: poll.id,
-        options: results,
-      });
-    }
+
+    // Broadcast updated results
+    await broadcastPollResults(req.app.get("io"), pollId);
+
     return res.status(201).json({ message: "Vote submitted", vote, results });
   } catch (err) {
     console.error(err);
