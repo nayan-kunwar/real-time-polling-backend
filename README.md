@@ -21,7 +21,9 @@ Follow these steps to set up and run the backend locally:
    ```env
    PORT=8000
    DATABASE_URL="postgresql://testuser:test@localhost:5432/polling"
+   NODE_ENV=development # or production
    ```
+   Here ```testuser``` is username and ```test``` is a passord. See docker compose file for more details.
 
 4. **Start PostgreSQL Database with Docker**
    Ensure Docker is running, then start the database container:
