@@ -31,7 +31,7 @@ export const createUser = async (req, res) => {
       data: {
         name,
         email,
-        password,
+        password: passwordHash,
       },
       select: {
         id: true,
