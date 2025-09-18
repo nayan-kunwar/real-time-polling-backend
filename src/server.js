@@ -19,7 +19,10 @@ const startServer = async () => {
     // 3️⃣ Attach Socket.IO to this server
     const io = new Server(httpServer, {
       cors: {
-        origin: "http://localhost:3000",
+        origin:
+          process.env.NODE_ENV === "production"
+            ? "https://real-time-polling-frontend-theta.vercel.app"
+            : "http://localhost:3000",
         methods: ["GET", "POST"],
         credentials: true,
       },
