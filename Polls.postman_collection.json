@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "8d31ee18-929c-4902-9ef1-651187cb676f",
+		"name": "Polls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33042971",
+		"_collection_link": "https://www.postman.com/mern11-8878/workspace/polling/collection/33042971-8d31ee18-929c-4902-9ef1-651187cb676f?action=share&source=collection_link&creator=33042971"
+	},
+	"item": [
+		{
+			"name": "Create Poll 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//   \"question\": \"Which database do you prefer for backend development?\",\r\n//   \"options\": [\"PostgreSQL\", \"MongoDB\", \"MySQL\", \"Redis\"],\r\n//   \"creatorId\": 1,\r\n//   \"isPublished\": true\r\n// }\r\n\r\n{\r\n  \"question\": \"Which architecture style do you prefer for building scalable applications?\",\r\n  \"options\": [\"Microservices\", \"Monolith\", \"Serverless\", \"Event-Driven\"],\r\n  \"creatorId\": 2,\r\n  \"isPublished\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Polls",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Vote to Poll",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create Poll 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Which database do you prefer for backend development?\",\r\n  \"options\": [\"PostgreSQL\", \"MongoDB\", \"MySQL\", \"Redis\"],\r\n  \"creatorId\": 1,\r\n  \"isPublished\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/polls",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
