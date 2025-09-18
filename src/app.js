@@ -12,7 +12,6 @@ app.use(morgan("dev"));
 //Routes Imports
 import userRoutes from "./routes/user.routes.js";
 import pollRoutes from "./routes/poll.routes.js";
-// import voteRoutes from "./routes/vote.routes.js";
 
 app.get("/", (req, res) => {
   res.status(200).send("APIs are working...");
@@ -21,9 +20,5 @@ app.get("/", (req, res) => {
 // Routes Definitions
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/polls", pollRoutes);
-// app.use("/api/votes", voteRoutes);
-
-// app.use(notFound);
-// app.use(errorHandler);
 
 export { app };

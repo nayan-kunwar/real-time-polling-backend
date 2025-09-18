@@ -37,7 +37,7 @@ export const createUser = async (req, res) => {
         id: true,
         name: true,
         email: true,
-        createdAt: true, // Only include non-sensitive fields
+        createdAt: true,
       },
     });
 
